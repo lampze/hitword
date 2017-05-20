@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HitWord</title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="jquery-3.1.1.min.js"></script>
+		<style media="screen">
+
+
+			/*重置样式 Start*/
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed,
+			figure, figcaption, footer, header, hgroup,
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			a {
+				color: #000;
+			}
+			body,html {
+				height: 100%;
+			}
+			/*重置样式 End*/
+
+
+			body {
+				background-color: #f4f4f4;
+			}
+
+			.index-header {
+				text-align: center;
+				height: 38px;
+			}
+			.index-header p {
+				font-size: 24px;
+				display: inline-block;
+				margin: 0 auto;
+			}
+			.hr {
+				height: 4px;
+				width: 150px;
+				background-color: #000;
+				margin: 0 auto;
+			}
+			.index-banner {
+				height: 100%;
+				width: 200px;
+				float: left;
+			}
+			.banner-body {
+				height: 100%;
+				top: 0;
+				border-right: 3px solid #999999;
+				background-color: #eee;
+				overflow: auto;
+			}
+			.banner-body ol {
+				padding-top: 8px;
+				padding-left: 35px;
+				line-height: 30px;
+			}
+			.index-body {
+				height: 100%;
+				margin-left: 200px;
+			}
+			.write {
+				margin-top: 35px;
+				margin-left: 2%;
+				margin-right: 2%;
+				position: relative;
+				text-align: center;
+			}
+			.a-write-line {
+				position: relative;
+				height: 70px;
+				width: 800px;
+				background-color: #fff;
+				border: 1px solid #aaa;
+				border-radius:5px;
+				margin: 0 auto;
+				margin-top: 12px;
+			}
+			.a-read-hit {
+				display: inline-block;
+				float: left;
+				width: 20px;
+				height: 100%;
+				font-size: 20px;
+				text-align: left;
+				margin-left: 4px;
+				margin-top: 5px;
+			}
+			.read {
+				height: 30px;
+				width: 100%;
+			}
+			.hit {
+				width: 100%;
+				height: 30px;
+				text-align: left;
+				border: none;
+				outline: medium;
+			}
+			.count {
+				background-color: #fff;
+				border: 3px solid #ccc;
+				margin: 0 auto;
+				margin-top: 15px;
+				position: relative;
+				text-align: center;
+				width: 800px;
+				height: 50px;
+			}
+			.count-block {
+				position: relative;
+				float: left;
+				height: 40px;
+				width: 190px;
+				top: 5px;
+				background-color: #fff;
+				padding-top: 3px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="index-banner">
+			<div class="banner-body">
+				<ol>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+					<li><a href="">文件名</a></li>
+				</ol>
+			</div>
+		</div>
+		<div class="index-body">
+			<div class="index-header">
+			<div class="hr hr-top"></div>
+			<p>HitWord</p>
+			<div class="hr hr-bottom"></div>
+			</div>
+			<div class="write">
+				<div class="a-write-line" id="line1">
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+				</div>
+				<div class="a-write-line" id="line2">
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+				</div>
+				<div class="a-write-line" id="line3">
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+				</div>
+				<div class="a-write-line" id="line4">
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+				</div>
+				<div class="a-write-line" id="line5">
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+				</div>
+				<div class="a-write-line" id="line6">
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+					<div class="a-read-hit">
+						<span class="read"></span><br>
+						<input class="hit" maxlength="1">
+					</div>
+				</div>
+
+				<div class="count">
+					<div class="count-block" id="count-time">时间 00:00:00</div>
+					<div class="count-block" id="count-spead">速度 0字/分</div>
+					<div class="count-block" id="count-sche">进度 0%</div>
+					<div class="count-block" id="count-true">正确率 0%</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="./js/mouse.js"></script>
+		<script src="./js/refont.js"></script>
+		<script src="./js/main.js"></script>
+
+		<!--以前的js代码-->
+		<!--
+		<script type="text/javascript">
+			var text="冰灯是流行于中国北方的一种古老的民间艺术形式。因为独特的地域优势，黑龙江可以说是制作冰灯最早的地方。传说在很早以前，每到冬季的夜晚，在松嫩平原上，人们总会看到三五成群的农夫和渔民在悠然自得地喂马和捕鱼，他们所使用的照明工具就是用冰做成的灯笼。这便是最早的冰灯。当时制作冰灯的工艺也很简单，把水放进木桶里冻成冰坨，凿出空心，放个油灯在里面，用以照明，冰罩挡住了凛冽的寒风，黑夜里便有了不灭的灯盏，冰灯成了人们生活中不可缺少的帮手。后来，每逢新春佳节和上元之夜，人们又把它加以装饰，而成为供人观赏的独特的艺术表现形式。清代《黑龙江外纪》里对此有过详细的记载：“上元，城中张灯五夜，村落妇女来观剧者，车声彻夜不绝。有镂五六尺冰为寿星灯者，中燃双炬，望之如水晶人。”其时，冰灯在南方一些地方也相继出现过。乾隆、嘉庆年间，四川诗人张问陶曾写过一首专门描写冰灯的诗，题名就叫《冰灯》，诗云：“黑夜有炎凉，冰灯吐焰长。照来消热念，凿处漏寒光。影湿星沉水，神清月里霜。三冬足文史，底用探萤囊。”南京诗人金德荣在被谪戍新疆巴里坤时，在其古风长诗《巴里坤冰灯歌》中也咏叹道：“雪山高与天山接，上有万古不化雪。朔风一夜结作冰，裁雪妙手搏为冰。以矾入冰冰不化，以烛照冰光四射。五里之内尽通明，半月能教天不夜。元夕月轮照碧空，大千人入水晶宫。”哈尔滨是中国冰雪艺术的摇篮，哈尔滨冰灯驰名中外，饮誉华夏。哈尔滨大规模有组织地制作和展出冰灯始于1963年，人们利用盆、桶等简单模具自然冷冻了千余盏冰灯和数十个冰花，于元宵佳节在兆麟公园展出，轰动全城，形成了万人空巷看冰灯的盛大场面。至今许多老哈尔滨人回想起来仍然记忆犹新，感慨万千。这也是我国第一个有组织、有领导的冰灯游园会。当时就有人即兴作词，来形容这“万人空巷，盛极一时”的今古奇观：“灯节，灯节，玉树冰灯明月。人山人海兴浓，园北园南烛红。红烛，红烛，普照万民同乐。”冰灯是黑土地的特产，是龙江人的骄傲。从盆制冰景到一年一度大规模的冰灯游园会，哈尔滨冰灯艺术日趋成熟，它的影响和辐射早已使其驰名世界，风靡海内外。1985年，勤劳智慧的冰城人民进一步挖掘冰雪热能，开发冰雪资源，以蜚声中外的冰灯游园会为中心，推出了以冰雪艺术、冰雪体育、冰雪文化、冰雪旅游、冰雪经贸为内容的哈尔滨冰雪节，把让人畏惧的冰雪变成了宝贵的自然资源，给冰城之冬增添了盎然的春意。以后每年的1月5日，便成为哈尔滨人民特有的地方性传统节日，北方人改变了足不出户的“猫冬”习惯，开始参加各种冰雪活动，哈尔滨之冬不再寂寞，哈尔滨的冬天热了起来。";
+			var line=new Array(6);
+			for (var i=0;i<7;i++) {
+				line[i] = text.substr(0, 35);
+				text = text.substring(36);
+			}
+			document.getElementById("read-line1").innerHTML=line[0];
+			document.getElementById("read-line2").innerHTML=line[1];
+			document.getElementById("read-line3").innerHTML=line[2];
+			document.getElementById("read-line4").innerHTML=line[3];
+			document.getElementById("read-line5").innerHTML=line[4];
+			document.getElementById("read-line6").innerHTML=line[5];
+			document.getElementById("read-line7").innerHTML=line[6];
+			//填充文字
+		</script>
+		<script type="text/javascript">
+			var h=0;
+			var m=0;
+			var s=0;
+			var startnum=0;
+			$("input").keydown(function(back){ //backspace回到上一个input
+				var hit_id=$(this).attr('id');
+				var hit_word=document.getElementById(hit_id).value;
+				var hit_num=hit_id.substr(8,8);
+				if(hit_word.length==0 && back.which == 8 && hit_num != 1) {
+					hit_num--;
+					hit_num="#" + hit_id.substr(0,8) + hit_num;
+					$(hit_num).focus();
+				}
+			});
+			function writing (read, hit){
+				var x=document.getElementById(read).innerHTML;
+				var y=document.getElementById(hit).value;
+				if (y == x.substr(0,y.length)) {
+					document.getElementById(read).style.color="#aaa";
+				} else {
+					document.getElementById(read).style.color="#f00";
+				}//判断打字的对错
+				var num = hit.substr(8,8);
+				if (x.length>y.length && num<7) {//回车键到下一个input
+					num++;
+					num="#" + hit.substr(0,8) + num;
+					$(document).keypress(function(enter) {
+						if(enter.which == 13) {
+							$(num).focus();
+						}
+					});
+				}
+				startnum++;
+			}
+			$("input").keydown(function (){//只进行一次计时函数
+				if(startnum == 1) {
+					start();
+				}
+			});
+			function start () {//计时函数
+				s++;
+				if(s>=60) {
+					s=0;
+					m++;
+				}
+				if(m>=60) {
+					m=0;
+					h++;
+				}
+				s=checkTime(s);
+				m=checkTime(m);
+				h=checkTime(h);
+				document.getElementById("count-time").innerHTML="时间 "+h+":"+m+":"+s;
+				t=setTimeout('start()',1000);
+			}
+			function checkTime(i) {//让时间以00:00:00的形式出现
+				if (i<10) {
+					i-=1;
+					i+=1;
+					i = "0" + i;
+				}
+				return i;
+			}
+		</script>
+	-->
+	</body>
+</html>
