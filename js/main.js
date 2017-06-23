@@ -1,4 +1,5 @@
 var conBanner = document.getElementsByClassName('con-banner');
+
 function getMousePos(event) {
   var e = event || window.event;
   return {'x':e.clientX, 'y':e.clientY}
