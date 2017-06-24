@@ -11,6 +11,10 @@ body {
   display: flex;
   flex-direction: row;
 }
+::selection {
+  opacity: 0;
+  color: #aaa;
+}
 .banner {
   display: flex;
   justify-content: flex-end;
