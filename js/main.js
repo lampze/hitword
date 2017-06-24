@@ -26,3 +26,5 @@ document.addEventListener('mousemove', function() {
   }
 })
 conBanner[0].style.cursor="move";
+var read = document.getElementsByClassName('hit')[0];
+read.value = "adfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naaf"

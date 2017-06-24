@@ -45,27 +45,71 @@ body {
   height: 100%;
 }
 .writer {
+  position: relative;
   margin: 0 auto;
   padding: 10px;
   background-color: #eee;
   border: 3px solid #ccc;
   border-radius: 10px;
 }
-.line {
-  margin: 10px auto;
-  padding: 2px;
-  background-color: #fff;
-  border: 2px solid #ccc;
+.read {
+  height: 470px;
+  background-color: #ccc;
+  width: 730px;
+  margin: 10px 0;
 }
-.read-line {
-  text-align: left;
+.real-font {
+  line-height: 80px;
+  position: relative;
+  top: -25px;
   width: 722px;
+  margin: 0 auto;
   font-size: 24px;
+  word-break: break-all;
+  overflow: hidden;
+  height: 498px;
+  font-family: cursive;
 }
-.hit-line {
-  width: 722px;
-  font-size: 24px;
+.hit {
+  line-height: 80px;
+  background-color: rgba(255, 0, 0, 0);
   border: none;
+  position: absolute;
+  top: 30px;
+  width: 722px;
+  margin: 0 2px;
+  font-size: 24px;
+  word-break: break-all;
+  overflow: hidden;
+  height: 498px;
+  resize: none;
+  outline: none;
+  font-size: 24px;
+  font-family: cursive;
+}
+.cover {
+  width: 730px;
+  height: 36px;
+  position: absolute;
+  background-color: #fff;
+}
+.cover1 {
+  top: 54px;
+}
+.cover2 {
+  top: 134px;
+}
+.cover3 {
+  top: 214px;
+}
+.cover4 {
+  top: 294px;
+}
+.cover5 {
+  top: 374px;
+}
+.cover6 {
+  top: 454px;
 }
 .counter {
   display: inline-flex;
