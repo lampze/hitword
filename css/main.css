@@ -68,7 +68,7 @@ body {
   word-break: break-all;
   overflow: hidden;
   height: 498px;
-  font-family: cursive;
+  font-family: monospace;
 }
 .hit {
   line-height: 80px;
@@ -85,7 +85,7 @@ body {
   resize: none;
   outline: none;
   font-size: 24px;
-  font-family: cursive;
+  font-family: monospace;
 }
 .cover {
   width: 730px;
