@@ -74,6 +74,9 @@ body {
   height: 498px;
   font-family: monospace;
 }
+.real-font span {
+  word-wrap: break-word;
+}
 .hit {
   line-height: 80px;
   background-color: rgba(255, 0, 0, 0);
