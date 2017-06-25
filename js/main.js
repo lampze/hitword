@@ -26,5 +26,13 @@ document.addEventListener('mousemove', function() {
   }
 })
 conBanner[0].style.cursor="move";
-var read = document.getElementsByClassName('hit')[0];
-read.value = "adfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naaf"
+var hit = document.getElementsByClassName('hit')[0];
+hit.value = "adfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naafadfasdfadsf\naaf"
+var read = document.getElementsByClassName('real-font')[0];
+var font = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+var count = 0;
+while(read.scrollHeight <= read.offsetHeight) {
+  read.innerHTML = read.innerHTML + font[count];
+  count++;
+}
+read.innerHTML = read.innerHTML.slice(0, -1);
