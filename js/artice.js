@@ -37,7 +37,7 @@ function Artice(main, title) {
     },
     changeColor: function(read, hit) {
       return function() {
-        for(var num=0;num<hit.value.length+1;num++) {
+        for(var num=0;num<hit.value.length;num++) {
           if(hit.value[num] == read[num].innerHTML) {
             read[num].style.color = "green";
           }else {
