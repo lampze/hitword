@@ -21,8 +21,9 @@ function Artice(main, title) {
       return this.trueNums / this.numWords * 100
     },
     sliceStr: function(obj) {
+      obj.innerHTML = null;
       for (var count=0; obj.scrollHeight <= obj.offsetHeight; count++) {
-          obj.innerHTML = obj.innerHTML + this.next[count];
+          obj.innerHTML += this.next[count];
       }
       count--;
       this.now = this.next.slice(0,count);
