@@ -8,14 +8,37 @@ function Artice(main, title) {
     numWords: 0,
     trueNums: 0,
     time: 0,
+    t: {},
     minutes: function() {
-      return this.time / 60
+      return Math.floor(this.time / 60)
     },
     seconds: function() {
       return this.time % 60
     },
+    timeBeautiful: function(num) {
+      if(num < 10) {
+        return '0' + num
+      } else {
+        return num
+      }
+    },
+    timeBegin: function(minutesObj, secondsObj, speedObj, correctObj) {
+      function tem(artice, minutesObj, secondsObj, speedObj, correctObj) {
+        return function() {
+          minutesObj.innerHTML = artice.timeBeautiful(artice.minutes());
+          secondsObj.innerHTML = artice.timeBeautiful(artice.seconds());
+          speedObj.innerHTML = artice.speed();
+          correctObj.innerHTML = artice.correct();
+          artice.time += 1;
+        }
+      }
+      this.t = setInterval(tem(artice, minutesObj, secondsObj, speedObj, correctObj), 1000);
+    },
+    timePause: function() {
+      clearInterval(this.t);
+    },
     speed: function() {
-      return this.numWords / this.minutes();
+      return Math.round(this.numWords / (this.minutes() || 1))
     },
     correct: function() {
       return this.trueNums / this.numWords * 100
