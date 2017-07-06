@@ -32,6 +32,7 @@ var read = document.getElementsByClassName('real-font')[0];
 var minutes = document.getElementById('minutes');
 var seconds = document.getElementById('seconds');
 var speed = document.getElementById('speed');
+var count = document.getElementById('count');
 var correct = document.getElementById('correct');
 
 
@@ -39,7 +40,13 @@ var artice = new Artice("冰灯是流行于中国北方的一种古老的民间�
 artice.sliceStr(read);
 artice.plan(read);
 var readSpan = document.getElementsByClassName("change");
-hit.addEventListener("keyup", artice.changeColor(readSpan, hit));
+hit.addEventListener("keyup", function() {
+  artice.changeColor(readSpan, hit);
+  if(!artice.t) {
+    artice.timeBegin(minutes, seconds, count,speed, correct);
+  }
+  speed.innerHTML = artice.speed();
+  correct.innerHTML = artice.correct();
+  count.innerHTML = artice.numWords;
 
-
-//artice.timeBegin(minutes, seconds, speed, correct);
+});
