@@ -40,13 +40,15 @@ var artice = new Artice("冰灯是流行于中国北方的一种古老的民间�
 artice.sliceStr(read);
 artice.plan(read);
 var readSpan = document.getElementsByClassName("change");
-hit.addEventListener("keyup", function() {
+function conFont() {
   artice.changeColor(readSpan, hit);
   if(!artice.t) {
-    artice.timeBegin(minutes, seconds, count,speed, correct);
+    artice.timeBegin(minutes, seconds, count, speed, correct);
   }
   speed.innerHTML = artice.speed();
   correct.innerHTML = artice.correct();
   count.innerHTML = artice.numWords;
-
-});
+}
+hit.addEventListener("keyup", conFont);
+hit.addEventListener("keydown", conFont);
+hit.addEventListener("keypress", conFont);

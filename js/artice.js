@@ -25,7 +25,7 @@ function Artice(main, title) {
       }
     },
     timeBegin: function(minutesObj, secondsObj, countObj, speedObj, correctObj) {
-      function tem(artice, minutesObj, secondsObj, speedObj, correctObj) {
+      function tem() {
         return function() {
           minutesObj.innerHTML = artice.timeBeautiful(artice.minutes());
           secondsObj.innerHTML = artice.timeBeautiful(artice.seconds());
@@ -35,13 +35,14 @@ function Artice(main, title) {
           artice.time += 1;
         }
       }
-      this.t = setInterval(tem(artice, minutesObj, secondsObj, speedObj, correctObj), 1000);
+      this.t = setInterval(tem(), 1000);
     },
     timePause: function() {
       clearInterval(this.t);
+      this.t = false;
     },
     speed: function() {
-      return Math.round(this.numWords / ((this.minutes() + this.seconds() / 60) || 1))
+      return Math.round(this.numWords / ((this.time / 60) || 1))
     },
     correct: function() {
       return Math.round((this.trueNums / this.numWords * 100) || 0)
@@ -65,7 +66,7 @@ function Artice(main, title) {
     changeColor: function(read, hit) {
       this.numWords = this.numWordsHistory;
       this.trueNums = this.trueNumsHistory;
-      for(var num=0;num<hit.value.length;num++) {
+      for(var num=0; num<hit.value.length; num++) {
         if(hit.value[num] == read[num].innerHTML) {
           read[num].style.color = "green";
           this.trueNums += 1;
@@ -74,7 +75,7 @@ function Artice(main, title) {
         }
         this.numWords += 1;
       }
-      for(var num=hit.value.length;num<read.length;num++) {
+      for(var num=hit.value.length; num<read.length; num++) {
         read[num].style.color = "black";
       }
     }
