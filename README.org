@@ -1,0 +1,4 @@
+* hitword
+预览地址：[[https://lampze.github.io/view/hitword][hitword]]
+
+目标是做一个宽度和高度可变的打字软件
