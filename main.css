@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hitword {
+    height: 80%;
+    width: 80%;
+    border: solid 2px black;
+}
+
+.hitword pre {
+    display: block;
+    font-size: 26px;
+    font-family: sans-serif;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-all;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+.show {
+}
+
+.edit {
+    position: relative;
+    top: -100%;
+    background-color: rgba(0,0,0,0);
+}
