@@ -21,6 +21,11 @@ function mulpx(px, mul) {
 function letEditSameShow() {
   edit.style.height = show.style.height;
   edit.style.height = subpx(getStyleVal(edit, "height"), mulpx(fontSize, 1.3));
+
+  if(show.scrollTop != edit.scrollTop) {
+    edit.scrollTop += edit.clientHeight/2;
+    show.scrollTop = edit.scrollTop;
+  }
 }
 
 function inspectType() {
@@ -32,7 +37,9 @@ function inspectType() {
       break;
   }
 
-  for(; i < 1 + (editContent.length > lastEditContent.length ? editContent.length : lastEditContent.length); i++) {
+  maxLength = Math.max(editContent.length, lastEditContent.length);
+
+  for(; i < maxLength ; i++) {
     if(editContent[i] === showContent[i]) {
       showSpan[i].className = "correct";
     } else {
@@ -47,11 +54,6 @@ function inspectType() {
 }
 
 function watchEdit() {
-  if(show.scrollTop != edit.scrollTop) {
-    show.scrollTop = edit.scrollTop;
-    befor = edit.scrollTop;
-  }
-
   letEditSameShow();
   inspectType();
 }
@@ -60,6 +62,7 @@ function fillShow(text) {
   for(var i = 0; i < text.length; i++) {
     show.innerHTML += "<span class=\"normal\">" + text[i] + "</span>";
   }
+  show.innerHTML += "<br><br>";
 }
 
 
