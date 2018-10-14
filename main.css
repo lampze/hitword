@@ -14,7 +14,7 @@ html, body {
     border: solid 2px black;
 }
 
-.hitword pre {
+.samestyle {
     display: block;
     font-size: 26px;
     font-family: sans-serif;
@@ -36,4 +36,16 @@ html, body {
     position: relative;
     top: -100%;
     background-color: rgba(0,0,0,0);
+}
+
+.normal {
+    color: #666;
+}
+
+.error {
+    color: red;
+}
+
+.correct {
+    color: green;
 }
