@@ -18,11 +18,16 @@ function mulpx(px, mul) {
   return parseFloat(px) * parseFloat(mul) + "px";
 }
 
-function inspectTyep() {
+function letEditSameShow() {
+  edit.style.height = show.style.height;
+  edit.style.height = subpx(getStyleVal(edit, "height"), mulpx(fontSize, 1.3));
+}
+
+function inspectType() {
   var editContent = edit.value;
   var showContent = show.innerText;
 
-  for(i = 0; i < lastEditContent.length; i++) {
+  for(var i = 0; i < lastEditContent.length; i++) {
     if(lastEditContent[i] != editContent[i])
       break;
   }
@@ -47,11 +52,12 @@ function watchEdit() {
     befor = edit.scrollTop;
   }
 
-  inspectTyep();
+  letEditSameShow();
+  inspectType();
 }
 
 function fillShow(text) {
-  for(i = 0; i < text.length; i++) {
+  for(var i = 0; i < text.length; i++) {
     show.innerHTML += "<span class=\"normal\">" + text[i] + "</span>";
   }
 }
@@ -73,10 +79,14 @@ for(var i=0; i<samestyle.length; i++) {
 }
 
 edit.style.transform = "translateY(" + mulpx(fontSize, 1.3) + ")";
-edit.style.height = subpx(getStyleVal(edit, "height"), mulpx(fontSize, 1.3));
+letEditSameShow();
 
-edit.onkeydown = (e) => {
+edit.onkeydown = () => {
   setTimeout(watchEdit, 1);
+}
+
+window.onresize = () => {
+  letEditSameShow();
 }
 
 fillShow(contentNow);
